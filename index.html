@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Grunt-md5-list by liuweifeng</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Grunt-md5-list</h1>
+        <p>Grunt Task：拷贝文件到指定目录，根据MD5重命名，然后生成一个文件路径和hash对应关系的JSON文档</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/liuweifeng/grunt-md5-list" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/liuweifeng/grunt-md5-list/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/liuweifeng/grunt-md5-list/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
+<a name="grunt-md5-list" class="anchor" href="#grunt-md5-list"><span class="octicon octicon-link"></span></a>grunt-md5-list</h1>
+
+<blockquote>
+<p>Copy files to a specified directory, rename to hash, and then generate JSON file that recode the key-value of file path and hash.</p>
+
+<p>拷贝文件到指定目录，根据MD5重命名，然后生成一个文件路径和hash对应关系的文档。</p>
+</blockquote>
+
+<p><a href="http://badge.fury.io/js/grunt-md5-list"><img src="https://badge.fury.io/js/grunt-md5-list.png" alt="NPM version"></a></p>
+
+<h2>
+<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>This plugin requires Grunt <code>~0.4.1</code></p>
+
+<p>If you haven't used <a href="http://gruntjs.com/">Grunt</a> before, be sure to check out the <a href="http://gruntjs.com/getting-started">Getting Started</a> guide, as it explains how to create a <a href="http://gruntjs.com/sample-gruntfile">Gruntfile</a> as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:</p>
+
+<pre lang="shell"><code>npm install grunt-md5-list --save-dev
+</code></pre>
+
+<p>Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:</p>
+
+<div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">'grunt-md5-list'</span><span class="p">);</span>
+</pre></div>
+
+<h2>
+<a name="the-md5_list-task" class="anchor" href="#the-md5_list-task"><span class="octicon octicon-link"></span></a>The "md5_list" task</h2>
+
+<h3>
+<a name="overview" class="anchor" href="#overview"><span class="octicon octicon-link"></span></a>Overview</h3>
+
+<p>In your project's Gruntfile, add a section named <code>md5_list</code> to the data object passed into <code>grunt.initConfig()</code>.</p>
+
+<div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+  <span class="nx">md5_list</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+      <span class="c1">// Task-specific options go here.</span>
+    <span class="p">},</span>
+    <span class="nx">your_target</span><span class="o">:</span> <span class="p">{</span>
+      <span class="c1">// Target-specific file lists and/or options go here.</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">})</span>
+</pre></div>
+
+<h3>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h3>
+
+<h4>
+<a name="optionsalgorithm" class="anchor" href="#optionsalgorithm"><span class="octicon octicon-link"></span></a>options.algorithm</h4>
+
+<p>Type: <code>String</code>
+Default value: <code>'md5'</code></p>
+
+<p>A string value that specific algorithm to generate hash.</p>
+
+<h4>
+<a name="optionsencoding" class="anchor" href="#optionsencoding"><span class="octicon octicon-link"></span></a>options.encoding</h4>
+
+<p>Type: <code>String</code>
+Default value: <code>'utf8'</code></p>
+
+<p>A string value that specific file encoding.</p>
+
+<h4>
+<a name="optionsoutput" class="anchor" href="#optionsoutput"><span class="octicon octicon-link"></span></a>options.output</h4>
+
+<p>Type: <code>String</code>
+Default value: <code>'dist.json'</code></p>
+
+<p>A string value that specific the output file.</p>
+
+<h3>
+<a name="usage-examples" class="anchor" href="#usage-examples"><span class="octicon octicon-link"></span></a>Usage Examples</h3>
+
+<h4>
+<a name="default-options" class="anchor" href="#default-options"><span class="octicon octicon-link"></span></a>Default Options</h4>
+
+<div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+  <span class="nx">md5_list</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">options</span><span class="o">:</span> <span class="p">{},</span>
+    <span class="nx">files</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">expand</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">cwd</span><span class="o">:</span> <span class="nx">TEMP_DIR</span><span class="p">,</span>
+      <span class="nx">src</span><span class="o">:</span> <span class="p">[</span><span class="s1">'js/**/*.js'</span><span class="p">,</span> <span class="s1">'css/**/*.css'</span><span class="p">],</span>
+      <span class="nx">dest</span><span class="o">:</span> <span class="s1">'dist/'</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">})</span>
+</pre></div>
+
+<h4>
+<a name="custom-options" class="anchor" href="#custom-options"><span class="octicon octicon-link"></span></a>Custom Options</h4>
+
+<p>In this example, custom options are used to do something else with whatever else. So if the <code>testing</code> file has the content <code>Testing</code> and the <code>123</code> file had the content <code>1 2 3</code>, the generated result in this case would be <code>Testing: 1 2 3 !!!</code></p>
+
+<div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+  <span class="nx">md5_list</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">algorithm</span><span class="o">:</span> <span class="s1">'sha1'</span><span class="p">,</span>
+      <span class="nx">output</span><span class="o">:</span> <span class="s1">'assets.json'</span>
+    <span class="p">},</span>
+    <span class="nx">files</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">expand</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="nx">cwd</span><span class="o">:</span> <span class="nx">TEMP_DIR</span><span class="p">,</span>
+      <span class="nx">src</span><span class="o">:</span> <span class="p">[</span><span class="s1">'js/**/*.js'</span><span class="p">,</span> <span class="s1">'css/**/*.css'</span><span class="p">],</span>
+      <span class="nx">dest</span><span class="o">:</span> <span class="s1">'dist/'</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+<span class="p">})</span>
+</pre></div>
+
+<h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using <a href="http://gruntjs.com/">Grunt</a>.</p>
+
+<h2>
+<a name="release-history" class="anchor" href="#release-history"><span class="octicon octicon-link"></span></a>Release History</h2>
+
+<p><strong>2013-07-31</strong> <code>0.2.0</code></p>
+
+<p>First version.</p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/liuweifeng">liuweifeng</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
