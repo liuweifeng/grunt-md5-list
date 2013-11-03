@@ -12,6 +12,10 @@ var crypto = require('crypto');
 var path = require('path');
 var fs = require('fs');
 
+function fixZero(d) {
+  return d > 9 ? d : '0' + d;
+}
+
 module.exports = function(grunt) {
 
   // Please see the Grunt documentation for more information regarding task
@@ -40,10 +44,6 @@ module.exports = function(grunt) {
 
     var date = new Date();
     date = date.getFullYear() + '-' + fixZero(date.getMonth() + 1) + '-' + fixZero(date.getDate()) + ' ' + fixZero(date.getHours()) + ':' + fixZero(date.getMinutes()) + ':' + fixZero(date.getSeconds());
-
-    function fixZero(d) {
-      return d > 9 ? d : '0' + d;
-    }
     var counter = this.filesSrc.length;
 
     // Iterate over all specified file groups.
@@ -85,7 +85,7 @@ module.exports = function(grunt) {
           var d = shasum.digest('hex');
 
           // 版本号文件中不存在此Key值（新增文件），或者hash有变化（修改），存储对应关系
-          if (!json[key] || json[key].hash != d) {
+          if (!json[key] || json[key].hash !== d) {
             // console.log(key, '\t更新', d);
             json[key] = json[key] || {};
             json[key].hash = d;
