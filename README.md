@@ -5,6 +5,10 @@
 > 拷贝文件到指定目录，根据MD5重命名，然后生成一个文件路径和hash对应关系的文档。
 
 [![NPM version](https://badge.fury.io/js/grunt-md5-list.png)](http://badge.fury.io/js/grunt-md5-list)
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![Dependency Status](https://david-dm.org/liuweifeng/grunt-md5-list.png)](https://david-dm.org/liuweifeng/grunt-md5-list)
+
+[![NPM](https://nodei.co/npm/grunt-md5-list.png)](https://nodei.co/npm/grunt-md5-list/)
 
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
