@@ -4,6 +4,8 @@
 
 > 拷贝文件到指定目录，根据MD5重命名，然后生成一个文件路径和hash对应关系的文档。
 
+
+[![Build Status](https://travis-ci.org/liuweifeng/grunt-md5-list.png?branch=master)](https://travis-ci.org/liuweifeng/grunt-md5-list)
 [![NPM version](https://badge.fury.io/js/grunt-md5-list.png)](http://badge.fury.io/js/grunt-md5-list)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 [![Dependency Status](https://david-dm.org/liuweifeng/grunt-md5-list.png)](https://david-dm.org/liuweifeng/grunt-md5-list)
