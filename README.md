@@ -109,4 +109,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 ## Release History
 **2013-07-31** `0.2.0`
 
-First version.
+>First version.
+
+**2014-01-13** `0.4.0` 
+>add sortByKey options
