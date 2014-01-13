@@ -122,3 +122,6 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 **2014-01-13** `0.4.1` 
 >add test case
+
+**2014-01-13** `0.4.2` 
+>add Travis CI build status badge, update dependencies
