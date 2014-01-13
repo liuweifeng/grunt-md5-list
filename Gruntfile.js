@@ -32,20 +32,27 @@ module.exports = function(grunt) {
     md5_list: {
       default_options: {
         options: {
+          output: 'tmp/default_options/hash.json'
         },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        },
+        files: [{
+          expand: true,
+          cwd: 'test',
+          src: ['data/*.txt'],
+          dest: 'tmp/default_options/'
+        }]
       },
       custom_options: {
         options: {
-          separator: ': ',
-          punctuation: ' !!!',
+          output: 'tmp/custom_options/hash.json',
+          algorithm:'sha1'
         },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        },
-      },
+        files: [{
+          expand: true,
+          cwd: 'test',
+          src: ['data/*.txt'],
+          dest: 'tmp/custom_options/'
+        }]
+      }
     },
 
     // Unit tests.
@@ -65,7 +72,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'md5_list', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'md5_list', 'nodeunit', 'clean']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);

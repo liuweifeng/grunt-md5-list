@@ -53,7 +53,7 @@ module.exports = function(grunt) {
         return false;
       }
       var encoding = options.encoding;
-      var cwd = f.orig.cwd;
+      var cwd = f.orig.cwd || '.';
       var mapping = [];
       var dest = f.orig.dest;
 
@@ -75,7 +75,9 @@ module.exports = function(grunt) {
 
         var extname = path.extname(r);
         var basename = path.basename(r, extname);
+        // console.log(cwd, filepath);
         var key = path.relative(cwd, filepath).replace(extname, '');
+        // console.log('11');
         var shasum = crypto.createHash(options.algorithm);
         var s = fs.ReadStream(r);
         s.on('data', function(data) {

@@ -1,6 +1,7 @@
 'use strict';
 
 var grunt = require('grunt');
+var crypto = require('crypto');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -28,21 +29,23 @@ exports.md5_list = {
     done();
   },
   default_options: function(test) {
-    test.expect(1);
+    test.expect(2);
 
-    var actual = grunt.file.read('tmp/default_options');
-    var expected = grunt.file.read('test/expected/default_options');
-    test.equal(actual, expected, 'should describe what the default behavior is.');
-
+    var result = grunt.file.readJSON('tmp/default_options/hash.json');
+    var content = grunt.file.read('test/data/1.txt');
+    var hash = crypto.createHash('md5').update(content).digest('hex');
+    test.ok(grunt.file.exists('tmp/default_options/data/1-' + hash + '.txt'));
+    test.equal(result['data/1']['hash'], hash);
     test.done();
   },
   custom_options: function(test) {
-    test.expect(1);
+    test.expect(2);
 
-    var actual = grunt.file.read('tmp/custom_options');
-    var expected = grunt.file.read('test/expected/custom_options');
-    test.equal(actual, expected, 'should describe what the custom option(s) behavior is.');
-
+    var result = grunt.file.readJSON('tmp/custom_options/hash.json');
+    var content = grunt.file.read('test/data/1.txt');
+    var hash = crypto.createHash('sha1').update(content).digest('hex');
+    test.ok(grunt.file.exists('tmp/custom_options/data/1-' + hash + '.txt'));
+    test.equal(result['data/1']['hash'], hash);
     test.done();
   },
 };
