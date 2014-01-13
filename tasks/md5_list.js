@@ -111,6 +111,19 @@ module.exports = function(grunt) {
       // }
 
       function output() {
+        var sortByKey = options.sortByKey;
+        if (sortByKey) {
+          var keys = Object.keys(json),
+            i, k, len = keys.length,
+            tmp = {};
+          keys.sort();
+          for (i = 0; i < len; i++) {
+            k = keys[i];
+            tmp[k] = json[k];
+          }
+          json = tmp;
+          tmp = null;
+        }
         grunt.file.write(outputFile, JSON.stringify(json, null, 4));
         done();
       }

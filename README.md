@@ -59,6 +59,12 @@ Default value: `'dist.json'`
 
 A string value that specific the output file.
 
+#### options.sortByKey
+Type: `String`
+Default value: `'false'`
+
+A Boolean value that whether the generated key-value Object is sorted by the key.
+
 ### Usage Examples
 
 #### Default Options
