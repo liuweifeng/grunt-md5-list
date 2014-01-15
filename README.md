@@ -5,10 +5,11 @@
 > 拷贝文件到指定目录，根据MD5重命名，然后生成一个文件路径和hash对应关系的文档。
 
 
-[![Build Status](https://travis-ci.org/liuweifeng/grunt-md5-list.png?branch=master)](https://travis-ci.org/liuweifeng/grunt-md5-list)
-[![NPM version](https://badge.fury.io/js/grunt-md5-list.png)](http://badge.fury.io/js/grunt-md5-list)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
-[![Dependency Status](https://david-dm.org/liuweifeng/grunt-md5-list.png)](https://david-dm.org/liuweifeng/grunt-md5-list)
+[![Build Status](https://travis-ci.org/liuweifeng/grunt-md5-list.png?branch=master)](https://travis-ci.org/liuweifeng/grunt-md5-list)
+[![NPM version](https://badge.fury.io/js/grunt-md5-list.png)](http://badge.fury.io/js/grunt-md5-list)[![Dependency Status](https://david-dm.org/liuweifeng/grunt-md5-list.png)](https://david-dm.org/liuweifeng/grunt-md5-list)
+[![status](https://sourcegraph.com/api/repos/github.com/liuweifeng/grunt-md5-list/badges/status.png)](https://sourcegraph.com/github.com/liuweifeng/grunt-md5-list)
+[![Total views](https://sourcegraph.com/api/repos/github.com/liuweifeng/grunt-md5-list/counters/views.png)](https://sourcegraph.com/github.com/liuweifeng/grunt-md5-list)
 
 [![NPM](https://nodei.co/npm/grunt-md5-list.png)](https://nodei.co/npm/grunt-md5-list/)
 
