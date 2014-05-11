@@ -48,6 +48,12 @@ grunt.initConfig({
 
 ### Options
 
+#### options.prefix
+Type: `String`
+Default value: `''`
+
+will output in the result file. This is useful when you want to tell the PHPer the CDN url.
+
 #### options.algorithm
 Type: `String`
 Default value: `'md5'`
@@ -91,12 +97,12 @@ grunt.initConfig({
 ```
 
 #### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
 
 ```js
 grunt.initConfig({
   md5_list: {
     options: {
+      'prefix': 'http://cdn-url.com/xxx/',
       algorithm: 'sha1',
       output: 'assets.json'
     },
@@ -126,3 +132,6 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 **2014-01-13** `0.4.2` 
 >add Travis CI build status badge, update dependencies
+
+**2014-01-13** `0.4.2` 
+>add extname output; add prefix option.

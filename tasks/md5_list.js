@@ -56,6 +56,7 @@ module.exports = function(grunt) {
       var cwd = f.orig.cwd || '.';
       var mapping = [];
       var dest = f.orig.dest;
+      var prefix = options.prefix;
 
 
 
@@ -92,6 +93,10 @@ module.exports = function(grunt) {
             json[key] = json[key] || {};
             json[key].hash = d;
             json[key].time = date;
+            json[key].ext = extname;
+            if(prefix){
+              json[key].prefix = prefix;
+            }
           }
 
           //拷贝改名后的文件到dist目录

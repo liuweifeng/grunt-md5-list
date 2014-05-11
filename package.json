@@ -1,7 +1,7 @@
 {
   "name": "grunt-md5-list",
   "description": "Copy files to a specified directory, according to the MD5 Rename, and then generate a file path and hash correspondence between documents.",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "homepage": "https://github.com/liuweifeng/grunt-md5-list",
   "author": {
     "name": "liuweifeng",
